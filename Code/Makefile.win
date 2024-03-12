@@ -1,0 +1,91 @@
+# Project: main
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = compiled/exceptio.o compiled/genlib.o compiled/graphics.o compiled/linkedlist.o compiled/random.o compiled/simpio.o compiled/strlib.o compiled/imgui.o compiled/main.o compiled/DisplayGUI.o compiled/DisplayMap.o compiled/MyDraw.o compiled/DisplayExit.o compiled/ScoreList.o compiled/DisplayMainGUI.o compiled/FindPath.o compiled/DisplayScoreList.o compiled/DisplayDIYMap.o compiled/DisplayDIYList.o compiled/MapUtils.o compiled/AllThePath.o compiled/DisplayHelp.o
+LINKOBJ  = compiled/exceptio.o compiled/genlib.o compiled/graphics.o compiled/linkedlist.o compiled/random.o compiled/simpio.o compiled/strlib.o compiled/imgui.o compiled/main.o compiled/DisplayGUI.o compiled/DisplayMap.o compiled/MyDraw.o compiled/DisplayExit.o compiled/ScoreList.o compiled/DisplayMainGUI.o compiled/FindPath.o compiled/DisplayScoreList.o compiled/DisplayDIYMap.o compiled/DisplayDIYList.o compiled/MapUtils.o compiled/AllThePath.o compiled/DisplayHelp.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib32" -static-libgcc -mwindows -m32 -g3
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"../libgraphics" -I"../simpleGUI"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"../libgraphics" -I"../simpleGUI"
+BIN      = compiled/main.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3
+CFLAGS   = $(INCS) -m32 -g3
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+compiled/exceptio.o: ../libgraphics/exceptio.c
+	$(CC) -c ../libgraphics/exceptio.c -o compiled/exceptio.o $(CFLAGS)
+
+compiled/genlib.o: ../libgraphics/genlib.c
+	$(CC) -c ../libgraphics/genlib.c -o compiled/genlib.o $(CFLAGS)
+
+compiled/graphics.o: ../libgraphics/graphics.c
+	$(CC) -c ../libgraphics/graphics.c -o compiled/graphics.o $(CFLAGS)
+
+compiled/linkedlist.o: ../libgraphics/linkedlist.c
+	$(CC) -c ../libgraphics/linkedlist.c -o compiled/linkedlist.o $(CFLAGS)
+
+compiled/random.o: ../libgraphics/random.c
+	$(CC) -c ../libgraphics/random.c -o compiled/random.o $(CFLAGS)
+
+compiled/simpio.o: ../libgraphics/simpio.c
+	$(CC) -c ../libgraphics/simpio.c -o compiled/simpio.o $(CFLAGS)
+
+compiled/strlib.o: ../libgraphics/strlib.c
+	$(CC) -c ../libgraphics/strlib.c -o compiled/strlib.o $(CFLAGS)
+
+compiled/imgui.o: ../simpleGUI/imgui.c
+	$(CC) -c ../simpleGUI/imgui.c -o compiled/imgui.o $(CFLAGS)
+
+compiled/main.o: main.c
+	$(CC) -c main.c -o compiled/main.o $(CFLAGS)
+
+compiled/DisplayGUI.o: DisplayGUI.c
+	$(CC) -c DisplayGUI.c -o compiled/DisplayGUI.o $(CFLAGS)
+
+compiled/DisplayMap.o: DisplayMap.c
+	$(CC) -c DisplayMap.c -o compiled/DisplayMap.o $(CFLAGS)
+
+compiled/MyDraw.o: MyDraw.c
+	$(CC) -c MyDraw.c -o compiled/MyDraw.o $(CFLAGS)
+
+compiled/DisplayExit.o: DisplayExit.c
+	$(CC) -c DisplayExit.c -o compiled/DisplayExit.o $(CFLAGS)
+
+compiled/ScoreList.o: ScoreList.c
+	$(CC) -c ScoreList.c -o compiled/ScoreList.o $(CFLAGS)
+
+compiled/DisplayMainGUI.o: DisplayMainGUI.c
+	$(CC) -c DisplayMainGUI.c -o compiled/DisplayMainGUI.o $(CFLAGS)
+
+compiled/FindPath.o: FindPath.c
+	$(CC) -c FindPath.c -o compiled/FindPath.o $(CFLAGS)
+
+compiled/DisplayScoreList.o: DisplayScoreList.c
+	$(CC) -c DisplayScoreList.c -o compiled/DisplayScoreList.o $(CFLAGS)
+
+compiled/DisplayDIYMap.o: DisplayDIYMap.c
+	$(CC) -c DisplayDIYMap.c -o compiled/DisplayDIYMap.o $(CFLAGS)
+
+compiled/DisplayDIYList.o: DisplayDIYList.c
+	$(CC) -c DisplayDIYList.c -o compiled/DisplayDIYList.o $(CFLAGS)
+
+compiled/MapUtils.o: MapUtils.c
+	$(CC) -c MapUtils.c -o compiled/MapUtils.o $(CFLAGS)
+
+compiled/AllThePath.o: AllThePath.c
+	$(CC) -c AllThePath.c -o compiled/AllThePath.o $(CFLAGS)
+
+compiled/DisplayHelp.o: DisplayHelp.c
+	$(CC) -c DisplayHelp.c -o compiled/DisplayHelp.o $(CFLAGS)
